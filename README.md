@@ -7,6 +7,7 @@
       Chrome Extensions Portfolio
     </h1>
     <p class="hero-subtitle">Innovative solutions that enhance your browsing experience</p>
+    <p class="hero-note">Designed with Autodesk brand excellence</p>
   </div>
 </div>
 
