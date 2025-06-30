@@ -1,21 +1,55 @@
 /* Custom Dark Theme for Chrome Extensions Showcase */
 
 :root {
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --secondary-color: #6366f1;
-  --accent-color: #06d6a0;
-  --background-dark: #0f0f23;
-  --background-card: #1a1a2e;
-  --background-hover: #16213e;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --border-color: #334155;
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #06d6a0 0%, #4f46e5 100%);
-  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.4);
+  /* Autodesk Primary Brand Colors */
+  --autodesk-black: #000000;
+  --autodesk-white: #FFFFFF;
+  --hello-yellow: #FFFF00;
+  --hello-yellow-200: #fdfda1;
+  --hello-yellow-600: #eeef10;
+  --hello-yellow-700: #d7cb1d;
+  
+  /* Autodesk Detail Grays */
+  --warm-slate: #D5D5CB;
+  --warm-slate-100: #f5f5f0;
+  --warm-slate-300: #e4e4db;
+  --slate: #666666;
+  --slate-100: #e8e8e8;
+  --slate-200: #c9c9c9;
+  --slate-300: #a3a3a3;
+  
+  /* Autodesk Accent Colors */
+  --dawn: #F09D4F;
+  --dawn-300: #fec681;
+  --dusk: #F2520A;
+  --twilight: #1D91D0;
+  --twilight-300: #4eb3e9;
+  --morning: #2AD0A9;
+  --morning-300: #7be4cc;
+  
+  /* Applied Design System */
+  --primary-color: var(--hello-yellow);
+  --primary-hover: var(--hello-yellow-700);
+  --secondary-color: var(--twilight);
+  --accent-color: var(--morning);
+  --background-dark: var(--autodesk-black);
+  --background-card: #1a1a1a;
+  --background-hover: #2a2a2a;
+  --text-primary: var(--autodesk-white);
+  --text-secondary: var(--warm-slate);
+  --text-muted: var(--slate);
+  --border-color: var(--slate-300);
+  
+  /* Autodesk-Inspired Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--hello-yellow) 0%, var(--dawn) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--morning) 0%, var(--twilight) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--dawn) 0%, var(--dusk) 100%);
+  --gradient-yellow: linear-gradient(135deg, var(--hello-yellow-200) 0%, var(--hello-yellow) 100%);
+  
+  /* Shadows with Autodesk Black */
+  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --shadow-yellow: 0 4px 15px rgba(255, 255, 0, 0.3);
 }
 
 /* Override Docsify defaults */
@@ -56,14 +90,23 @@ body {
 
 .hero-title i {
   margin-right: 15px;
-  color: #ffd700;
+  color: var(--hello-yellow);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 0, 0.5));
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 300;
+  margin: 0 0 8px 0;
+}
+
+.hero-note {
+  font-size: 0.9rem;
+  color: var(--hello-yellow);
+  font-weight: 500;
   margin: 0;
+  opacity: 0.8;
 }
 
 /* Filter Section */
@@ -105,10 +148,11 @@ body {
 }
 
 .filter-btn.active {
-  background: var(--gradient-secondary);
+  background: var(--gradient-yellow);
   border-color: transparent;
-  color: white;
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  color: var(--autodesk-black);
+  box-shadow: var(--shadow-yellow);
+  font-weight: 600;
 }
 
 /* Extensions Grid */
@@ -182,15 +226,15 @@ body {
 }
 
 .extension-status.published {
-  background: rgba(6, 214, 160, 0.2);
-  color: var(--accent-color);
-  border: 1px solid rgba(6, 214, 160, 0.3);
+  background: rgba(42, 208, 169, 0.2);
+  color: var(--morning);
+  border: 1px solid rgba(42, 208, 169, 0.3);
 }
 
 .extension-status.wip {
-  background: rgba(251, 191, 36, 0.2);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: rgba(240, 157, 79, 0.2);
+  color: var(--dawn);
+  border: 1px solid rgba(240, 157, 79, 0.3);
 }
 
 .extension-title {
@@ -215,12 +259,12 @@ body {
 
 .tag {
   padding: 4px 12px;
-  background: rgba(79, 70, 229, 0.2);
-  color: var(--primary-color);
+  background: rgba(29, 145, 208, 0.2);
+  color: var(--twilight);
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid rgba(79, 70, 229, 0.3);
+  border: 1px solid rgba(29, 145, 208, 0.3);
 }
 
 .extension-actions {
@@ -246,7 +290,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  box-shadow: var(--shadow-yellow);
 }
 
 .btn-secondary {
@@ -265,8 +309,8 @@ body {
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  border-color: var(--hello-yellow);
+  color: var(--hello-yellow);
 }
 
 .btn-disabled {
@@ -313,13 +357,13 @@ body {
 }
 
 .footer-section a {
-  color: var(--primary-color);
+  color: var(--hello-yellow);
   text-decoration: none;
   font-weight: 500;
 }
 
 .footer-section a:hover {
-  color: var(--primary-hover);
+  color: var(--hello-yellow-700);
 }
 
 /* Animations */
@@ -380,11 +424,11 @@ body {
 }
 
 .sidebar ul li a:hover {
-  color: var(--primary-color) !important;
+  color: var(--hello-yellow) !important;
 }
 
 .sidebar ul li.active > a {
-  color: var(--primary-color) !important;
+  color: var(--hello-yellow) !important;
   font-weight: 600 !important;
 }
 
@@ -397,7 +441,8 @@ body {
 }
 
 .search input:focus {
-  border-color: var(--primary-color) !important;
+  border-color: var(--hello-yellow) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.2) !important;
 }
 
 /* Hidden class for filtering */
@@ -454,21 +499,21 @@ body {
 }
 
 .badge.published {
-  background: rgba(6, 214, 160, 0.2);
-  color: var(--accent-color);
-  border: 1px solid rgba(6, 214, 160, 0.3);
+  background: rgba(42, 208, 169, 0.2);
+  color: var(--morning);
+  border: 1px solid rgba(42, 208, 169, 0.3);
 }
 
 .badge.rating {
-  background: rgba(251, 191, 36, 0.2);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: rgba(255, 255, 0, 0.2);
+  color: var(--hello-yellow-700);
+  border: 1px solid rgba(255, 255, 0, 0.3);
 }
 
 .badge.users {
-  background: rgba(79, 70, 229, 0.2);
-  color: var(--primary-color);
-  border: 1px solid rgba(79, 70, 229, 0.3);
+  background: rgba(29, 145, 208, 0.2);
+  color: var(--twilight);
+  border: 1px solid rgba(29, 145, 208, 0.3);
 }
 
 /* Video Container */
@@ -614,8 +659,8 @@ body {
 
 .resource-link:hover {
   transform: translateY(-2px);
-  border-color: var(--primary-color);
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.1);
+  border-color: var(--hello-yellow);
+  box-shadow: 0 8px 20px rgba(255, 255, 0, 0.1);
 }
 
 .resource-link i {
@@ -650,9 +695,10 @@ body {
 
 .stat-item h3 {
   font-size: 2rem;
-  color: var(--primary-color);
+  color: var(--hello-yellow);
   margin: 0 0 8px 0;
   font-weight: 700;
+  text-shadow: 0 0 4px rgba(255, 255, 0, 0.3);
 }
 
 .stat-item p {
@@ -669,7 +715,7 @@ body {
 .testimonials blockquote {
   background: var(--background-card);
   border: 1px solid var(--border-color);
-  border-left: 4px solid var(--primary-color);
+  border-left: 4px solid var(--hello-yellow);
   border-radius: 8px;
   padding: 24px;
   margin: 20px 0;
@@ -698,13 +744,13 @@ body {
 }
 
 .extension-footer a {
-  color: var(--primary-color);
+  color: var(--hello-yellow);
   text-decoration: none;
   font-weight: 500;
 }
 
 .extension-footer a:hover {
-  color: var(--primary-hover);
+  color: var(--hello-yellow-700);
 }
 
 /* Mobile Responsiveness for Detail Pages */
@@ -740,8 +786,8 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
-  background: rgba(251, 191, 36, 0.1);
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: rgba(240, 157, 79, 0.1);
+  border: 1px solid rgba(240, 157, 79, 0.3);
   border-radius: 12px;
   padding: 24px;
   margin: 40px 0;
@@ -749,12 +795,12 @@ body {
 
 .wip-icon {
   font-size: 3rem;
-  color: #fbbf24;
+  color: var(--dawn);
   min-width: 60px;
 }
 
 .wip-content h3 {
-  color: #fbbf24;
+  color: var(--dawn);
   margin: 0 0 12px 0;
 }
 
@@ -766,7 +812,7 @@ body {
 .progress-bar {
   width: 100%;
   height: 8px;
-  background: rgba(251, 191, 36, 0.2);
+  background: rgba(240, 157, 79, 0.2);
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 8px;
@@ -774,13 +820,13 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  background: var(--gradient-accent);
   transition: width 0.5s ease;
 }
 
 .progress-text {
   font-size: 0.9rem;
-  color: #fbbf24;
+  color: var(--dawn);
   font-weight: 600;
 }
 
@@ -795,13 +841,13 @@ body {
 }
 
 .feature-status.completed {
-  background: rgba(6, 214, 160, 0.2);
-  color: var(--accent-color);
+  background: rgba(42, 208, 169, 0.2);
+  color: var(--morning);
 }
 
 .feature-status.in-progress {
-  background: rgba(251, 191, 36, 0.2);
-  color: #fbbf24;
+  background: rgba(240, 157, 79, 0.2);
+  color: var(--dawn);
 }
 
 .feature-status.planned {
@@ -850,13 +896,13 @@ body {
 }
 
 .roadmap-item.completed .roadmap-marker {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
+  background: var(--morning);
+  border-color: var(--morning);
 }
 
 .roadmap-item.in-progress .roadmap-marker {
-  background: #fbbf24;
-  border-color: #fbbf24;
+  background: var(--dawn);
+  border-color: var(--dawn);
   animation: pulse 2s infinite;
 }
 
@@ -890,22 +936,22 @@ body {
 }
 
 .roadmap-item.completed .roadmap-content {
-  border-color: rgba(6, 214, 160, 0.3);
+  border-color: rgba(42, 208, 169, 0.3);
 }
 
 .roadmap-item.in-progress .roadmap-content {
-  border-color: rgba(251, 191, 36, 0.3);
+  border-color: rgba(240, 157, 79, 0.3);
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+    box-shadow: 0 0 0 0 rgba(240, 157, 79, 0.7);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(251, 191, 36, 0);
+    box-shadow: 0 0 0 10px rgba(240, 157, 79, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+    box-shadow: 0 0 0 0 rgba(240, 157, 79, 0);
   }
 }
 
@@ -942,22 +988,22 @@ body {
 }
 
 .beta-signup {
-  background: white !important;
-  color: var(--primary-color) !important;
+  background: var(--hello-yellow) !important;
+  color: var(--autodesk-black) !important;
   margin-top: 20px;
   font-weight: 600;
 }
 
 .beta-signup:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-yellow);
 }
 
 /* Badge WIP Styling */
 .badge.wip {
-  background: rgba(251, 191, 36, 0.2);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: rgba(240, 157, 79, 0.2);
+  color: var(--dawn);
+  border: 1px solid rgba(240, 157, 79, 0.3);
 }
 
 /* Mobile Responsiveness for WIP Pages */
