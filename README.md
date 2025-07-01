@@ -45,7 +45,7 @@
       <span class="tag">security</span>
     </div>
     <div class="extension-actions">
-      <a href="extensions/securepass-manager" class="btn-primary">
+      <a href="#" class="btn-primary">
         <i class="fas fa-eye"></i> View Details
       </a>
       <a href="#" class="btn-secondary">
@@ -78,7 +78,7 @@
       <span class="tag">utility</span>
     </div>
     <div class="extension-actions">
-      <a href="extensions/smart-tab-organizer" class="btn-primary">
+      <a href="#" class="btn-primary">
         <i class="fas fa-eye"></i> View Details
       </a>
       <a href="#" class="btn-secondary">
@@ -144,7 +144,7 @@
       <span class="tag">wip</span>
     </div>
     <div class="extension-actions">
-      <a href="extensions/social-scheduler-pro" class="btn-primary">
+      <a href="#" class="btn-primary">
         <i class="fas fa-eye"></i> Preview
       </a>
       <span class="btn-disabled">
@@ -199,8 +199,7 @@
     Built with passion for the Chrome ecosystem
   </p>
   <p>
-    <a href="https://github.com/yourusername" target="_blank">
-      <i class="fab fa-github"></i> View on GitHub
-    </a>
+    <i class="fas fa-paint-brush"></i>
+    Powered by Autodesk design excellence
   </p>
 </div> 
