@@ -7,27 +7,39 @@
       AutoGus Chrome Extensions
     </h1>
     <p class="hero-subtitle">Innovative Autodesk-focused extensions that enhance your workflow</p>
-    <p class="hero-note">Developer: AutoGus | Autodesk Fusion & Construction Cloud specialist</p>
+    <p class="hero-note">Developer: Gus Quade | Platform Solutions Engineer and Vibe Coder</p>
   </div>
 </div>
 
 <div class="filter-section">
-  <h2><i class="fas fa-filter"></i> Filter by Category</h2>
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">All Extensions</button>
-    <button class="filter-btn" data-filter="productivity">Productivity</button>
-    <button class="filter-btn" data-filter="development">Development</button>
-    <button class="filter-btn" data-filter="autodesk">Autodesk</button>
-    <button class="filter-btn" data-filter="utility">Utility</button>
-    <button class="filter-btn" data-filter="operations">Operations</button>
-    <button class="filter-btn" data-filter="wip">Work in Progress</button>
+  <h2><i class="fas fa-filter"></i> Filter Extensions</h2>
+  
+  <div class="filter-group">
+    <h3>Filter by Progress</h3>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="published">Published</button>
+      <button class="filter-btn" data-filter="in-development">In Development</button>
+      <button class="filter-btn" data-filter="conceptual">Conceptual</button>
+    </div>
+  </div>
+  
+  <div class="filter-group">
+    <h3>Filter by Product</h3>
+    <div class="filter-buttons">
+      <button class="filter-btn" data-filter="fusion-manage">Fusion Manage</button>
+      <button class="filter-btn" data-filter="acc">ACC</button>
+      <button class="filter-btn" data-filter="fusion-operations">Fusion Operations</button>
+      <button class="filter-btn" data-filter="tandem">Tandem</button>
+      <button class="filter-btn" data-filter="upchain">Upchain</button>
+    </div>
   </div>
 </div>
 
 <div class="extensions-grid" id="extensions-grid">
 
   <!-- Extension Tile 1: ACC Navigator -->
-  <div class="extension-tile" data-tags="productivity,autodesk,construction">
+  <div class="extension-tile" data-tags="published,acc">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-compass"></i>
@@ -42,9 +54,8 @@
       Easy navigation for Autodesk Construction Cloud with sidebar integration and bookmark management for every module and submodule.
     </p>
     <div class="extension-tags">
-      <span class="tag">productivity</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">construction</span>
+      <span class="tag">published</span>
+      <span class="tag">acc</span>
     </div>
     <div class="extension-actions">
       <a href="https://chromewebstore.google.com/detail/acc-navigator/iajpnhmfnkmmemcmcnnccanbhicccabm" target="_blank" class="btn-primary">
@@ -61,7 +72,7 @@
   </div>
 
   <!-- Extension Tile 2: Fusion Manage Advanced Clipboard -->
-  <div class="extension-tile" data-tags="productivity,autodesk,development">
+  <div class="extension-tile" data-tags="published,fusion-manage">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-clipboard-list"></i>
@@ -76,9 +87,8 @@
       Advanced clipboard utility for Fusion Manage with multiple item support, API integration, and ECO/ECR/BOM workflows.
     </p>
     <div class="extension-tags">
-      <span class="tag">productivity</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">development</span>
+      <span class="tag">published</span>
+      <span class="tag">fusion-manage</span>
     </div>
     <div class="extension-actions">
       <a href="https://chromewebstore.google.com/detail/fusion-manage-advanced-cl/miicacedigmcjikfaiimmogicaedocmj" target="_blank" class="btn-primary">
@@ -95,7 +105,7 @@
   </div>
 
   <!-- Extension Tile 3: Fusion Operations Link Opener -->
-  <div class="extension-tile" data-tags="productivity,autodesk,operations">
+  <div class="extension-tile" data-tags="published,fusion-operations">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-external-link-alt"></i>
@@ -110,9 +120,8 @@
       Makes a360.co links clickable and embeds content in popup modals for seamless viewing of videos, drawings, and models.
     </p>
     <div class="extension-tags">
-      <span class="tag">productivity</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">operations</span>
+      <span class="tag">published</span>
+      <span class="tag">fusion-operations</span>
     </div>
     <div class="extension-actions">
       <a href="https://chromewebstore.google.com/detail/fusion-operations-link-op/glgjlippogdaimfdlcbccnjkhfknidfl" target="_blank" class="btn-primary">
@@ -129,7 +138,7 @@
   </div>
 
   <!-- Extension Tile 4: Fusion Manage Kanban Viewer (WIP) -->
-  <div class="extension-tile" data-tags="productivity,autodesk,wip">
+  <div class="extension-tile" data-tags="in-development,fusion-manage">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-columns"></i>
@@ -144,9 +153,8 @@
       Enhanced Kanban board visualization for Fusion Manage with custom views and workflow optimization.
     </p>
     <div class="extension-tags">
-      <span class="tag">productivity</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">wip</span>
+      <span class="tag">in-development</span>
+      <span class="tag">fusion-manage</span>
     </div>
     <div class="extension-actions">
       <a href="#" class="btn-primary">
@@ -163,7 +171,7 @@
   </div>
 
   <!-- Extension Tile 5: Fusion Manage Global Variable Manager (WIP) -->
-  <div class="extension-tile" data-tags="development,autodesk,wip">
+  <div class="extension-tile" data-tags="in-development,fusion-manage">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-cogs"></i>
@@ -178,9 +186,8 @@
       Advanced management interface for global variables in Fusion Manage with bulk operations and validation.
     </p>
     <div class="extension-tags">
-      <span class="tag">development</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">wip</span>
+      <span class="tag">in-development</span>
+      <span class="tag">fusion-manage</span>
     </div>
     <div class="extension-actions">
       <a href="#" class="btn-primary">
@@ -197,7 +204,7 @@
   </div>
 
   <!-- Extension Tile 6: Fusion Manage Advanced Admin Utilities (WIP) -->
-  <div class="extension-tile" data-tags="utility,autodesk,wip">
+  <div class="extension-tile" data-tags="in-development,fusion-manage">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-tools"></i>
@@ -212,9 +219,8 @@
       Comprehensive admin toolkit for Fusion Manage with advanced user management and system optimization tools.
     </p>
     <div class="extension-tags">
-      <span class="tag">utility</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">wip</span>
+      <span class="tag">in-development</span>
+      <span class="tag">fusion-manage</span>
     </div>
     <div class="extension-actions">
       <a href="#" class="btn-primary">
@@ -231,7 +237,7 @@
   </div>
 
   <!-- Extension Tile 7: Tandem Ops (WIP) -->
-  <div class="extension-tile" data-tags="operations,autodesk,wip">
+  <div class="extension-tile" data-tags="in-development,tandem">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-project-diagram"></i>
@@ -246,9 +252,8 @@
       Operational insights and management tools for Autodesk Tandem with enhanced visualization and reporting.
     </p>
     <div class="extension-tags">
-      <span class="tag">operations</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">wip</span>
+      <span class="tag">in-development</span>
+      <span class="tag">tandem</span>
     </div>
     <div class="extension-actions">
       <a href="#" class="btn-primary">
@@ -265,7 +270,7 @@
   </div>
 
   <!-- Extension Tile 8: Fusion Operations Favorite Bar (WIP) -->
-  <div class="extension-tile" data-tags="productivity,autodesk,operations,wip">
+  <div class="extension-tile" data-tags="in-development,fusion-operations">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-star"></i>
@@ -280,10 +285,8 @@
       Quick access toolbar for Fusion Operations with customizable shortcuts and frequently used operations.
     </p>
     <div class="extension-tags">
-      <span class="tag">productivity</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">operations</span>
-      <span class="tag">wip</span>
+      <span class="tag">in-development</span>
+      <span class="tag">fusion-operations</span>
     </div>
     <div class="extension-actions">
       <a href="#" class="btn-primary">
@@ -300,7 +303,7 @@
   </div>
 
   <!-- Extension Tile 9: Fusion Manage Projects Dashboard (WIP) -->
-  <div class="extension-tile" data-tags="productivity,autodesk,wip">
+  <div class="extension-tile" data-tags="in-development,fusion-manage">
     <div class="extension-header">
       <div class="extension-icon">
         <i class="fas fa-chart-line"></i>
@@ -315,9 +318,8 @@
       Comprehensive project overview dashboard for Fusion Manage with analytics, progress tracking, and team insights.
     </p>
     <div class="extension-tags">
-      <span class="tag">productivity</span>
-      <span class="tag">autodesk</span>
-      <span class="tag">wip</span>
+      <span class="tag">in-development</span>
+      <span class="tag">fusion-manage</span>
     </div>
     <div class="extension-actions">
       <a href="#" class="btn-primary">
