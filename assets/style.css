@@ -40,11 +40,11 @@
   --text-muted: var(--slate);
   --border-color: var(--slate-300);
   
-  /* Autodesk-Inspired Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--hello-yellow) 0%, var(--dawn) 100%);
-  --gradient-secondary: linear-gradient(135deg, var(--morning) 0%, var(--twilight) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--dawn) 0%, var(--dusk) 100%);
-  --gradient-yellow: linear-gradient(135deg, var(--hello-yellow-200) 0%, var(--hello-yellow) 100%);
+  /* Autodesk Solid Colors */
+  --primary-solid: var(--hello-yellow);
+  --secondary-solid: var(--twilight);
+  --accent-solid: var(--dawn);
+  --yellow-solid: var(--hello-yellow);
   
   /* Shadows with Autodesk Black */
   --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.4);
@@ -70,7 +70,7 @@ body {
 .hero-section {
   text-align: center;
   padding: 60px 0;
-  background: linear-gradient(135deg, var(--hello-yellow) 0%, var(--dawn) 100%) !important;
+  background: var(--hello-yellow) !important;
   margin: -20px -20px 40px -20px;
   border-radius: 0 0 20px 20px;
 }
@@ -84,26 +84,26 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: white;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: var(--autodesk-black);
+  text-shadow: none;
 }
 
 .hero-title i {
   margin-right: 15px;
-  color: var(--hello-yellow) !important;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 0, 0.5));
+  color: var(--autodesk-black) !important;
+  filter: none;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--autodesk-black);
   font-weight: 300;
   margin: 0 0 8px 0;
 }
 
 .hero-note {
   font-size: 0.9rem;
-  color: var(--hello-yellow);
+  color: var(--autodesk-black);
   font-weight: 500;
   margin: 0;
   opacity: 0.8;
@@ -180,7 +180,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--gradient-secondary);
+  background: var(--twilight);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -206,12 +206,12 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  background: var(--gradient-primary);
+  background: var(--hello-yellow);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: white;
+  color: var(--autodesk-black);
 }
 
 .extension-status {
@@ -274,7 +274,7 @@ body {
 
 .btn-primary {
   padding: 10px 16px;
-  background: var(--gradient-secondary);
+  background: var(--twilight);
   color: white;
   border: none;
   border-radius: 8px;
@@ -451,7 +451,7 @@ body {
 
 /* Extension Detail Pages */
 .extension-hero {
-  background: var(--gradient-primary);
+  background: var(--hello-yellow);
   margin: -20px -20px 40px -20px;
   padding: 40px 20px;
   border-radius: 0 0 20px 20px;
@@ -469,17 +469,19 @@ body {
   width: 80px;
   height: 80px;
   font-size: 2.5rem;
+  background: var(--autodesk-black);
+  color: var(--hello-yellow);
 }
 
 .extension-info h1 {
-  color: white;
+  color: var(--autodesk-black);
   margin: 0 0 8px 0;
   font-size: 2.5rem;
   font-weight: 700;
 }
 
 .tagline {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--autodesk-black);
   font-size: 1.2rem;
   margin: 0 0 16px 0;
 }
@@ -530,8 +532,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 300px;
-  background: var(--gradient-primary);
-  color: white;
+  background: var(--hello-yellow);
+  color: var(--autodesk-black);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -584,7 +586,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--gradient-secondary);
+  background: var(--twilight);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -820,7 +822,7 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: var(--gradient-accent);
+  background: var(--dawn);
   transition: width 0.5s ease;
 }
 
@@ -953,22 +955,22 @@ body {
 
 /* Early Access Section */
 .early-access {
-  background: var(--gradient-primary);
+  background: var(--hello-yellow);
   border-radius: 16px;
   padding: 32px;
   text-align: center;
-  color: white;
+  color: var(--autodesk-black);
   margin: 40px 0;
 }
 
 .early-access h3 {
-  color: white;
+  color: var(--autodesk-black);
   margin: 0 0 16px 0;
   font-size: 1.4rem;
 }
 
 .early-access p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--autodesk-black);
   margin: 0 0 20px 0;
 }
 
@@ -976,7 +978,7 @@ body {
   text-align: left;
   max-width: 400px;
   margin: 20px auto;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--autodesk-black);
 }
 
 .early-access li {
