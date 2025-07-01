@@ -84,7 +84,7 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--autodesk-black);
+  color: #000000 !important;
   text-shadow: none;
 }
 
@@ -96,14 +96,14 @@ body {
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: var(--autodesk-black);
+  color: #000000 !important;
   font-weight: 300;
   margin: 0 0 8px 0;
 }
 
 .hero-note {
   font-size: 0.9rem;
-  color: var(--autodesk-black);
+  color: #000000 !important;
   font-weight: 500;
   margin: 0;
   opacity: 0.8;
@@ -180,7 +180,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--twilight);
+  background: var(--morning);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -274,8 +274,8 @@ body {
 
 .btn-primary {
   padding: 10px 16px;
-  background: var(--twilight);
-  color: white;
+  background: var(--morning);
+  color: var(--autodesk-black);
   border: none;
   border-radius: 8px;
   text-decoration: none;
@@ -288,15 +288,16 @@ body {
 }
 
 .btn-primary:hover {
+  background: var(--morning-300);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-yellow);
+  box-shadow: 0 4px 15px rgba(42, 208, 169, 0.3);
 }
 
 .btn-secondary {
   padding: 10px 16px;
-  background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+  background: var(--slate);
+  color: var(--autodesk-white);
+  border: 1px solid var(--slate);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
@@ -308,8 +309,9 @@ body {
 }
 
 .btn-secondary:hover {
-  border-color: var(--hello-yellow);
-  color: var(--hello-yellow);
+  background: var(--warm-slate);
+  color: var(--autodesk-black);
+  border-color: var(--warm-slate);
 }
 
 .btn-disabled {
@@ -586,13 +588,13 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--twilight);
+  background: var(--morning);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
   font-size: 1.5rem;
-  color: white;
+  color: var(--autodesk-black);
 }
 
 .feature-card h3 {
