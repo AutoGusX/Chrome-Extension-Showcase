@@ -117,8 +117,19 @@ body {
 
 .filter-section h2 {
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-weight: 600;
+}
+
+.filter-group {
+  margin-bottom: 30px;
+}
+
+.filter-group h3 {
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .filter-buttons {
@@ -126,7 +137,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .filter-btn {

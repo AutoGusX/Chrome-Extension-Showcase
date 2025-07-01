@@ -18,10 +18,18 @@ function initializeFiltering() {
     filterButtons.forEach(button => {
       button.addEventListener('click', function() {
         const filter = this.getAttribute('data-filter');
+        const filterGroup = this.closest('.filter-group');
         
-        // Update active button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
+        // Update active button within the same filter group
+        if (filterGroup) {
+          const groupButtons = filterGroup.querySelectorAll('.filter-btn');
+          groupButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+        } else if (filter === 'all') {
+          // Reset all filters when "All" is clicked
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+        }
         
         // Filter tiles
         extensionTiles.forEach(tile => {
