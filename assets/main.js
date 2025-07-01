@@ -7,16 +7,14 @@ function initializeFiltering() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const extensionTiles = document.querySelectorAll('.extension-tile');
     
-    if (filterButtons.length === 0 || extensionTiles.length === 0) {
-      console.log('Filter elements not found, retrying...');
-      // Retry after a short delay if elements aren't found
+    if (filterButtons.length === 0) {
+      console.log('Filter buttons not found, retrying...');
       setTimeout(initializeFiltering, 1000);
       return;
     }
     
-    console.log('Initializing filtering with', filterButtons.length, 'buttons and', extensionTiles.length, 'tiles');
+    console.log('Setting up filters with', filterButtons.length, 'buttons');
     
-    // Add click event listeners to filter buttons
     filterButtons.forEach(button => {
       button.addEventListener('click', function() {
         const filter = this.getAttribute('data-filter');
@@ -25,18 +23,19 @@ function initializeFiltering() {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         this.classList.add('active');
         
-        // Filter extension tiles
-        filterExtensions(filter, extensionTiles);
-        
-        // Add animation delay
-        animateFilteredTiles();
+        // Filter tiles
+        extensionTiles.forEach(tile => {
+          const tags = tile.getAttribute('data-tags');
+          if (filter === 'all' || (tags && tags.includes(filter))) {
+            tile.style.display = 'block';
+          } else {
+            tile.style.display = 'none';
+          }
+        });
       });
     });
     
-    // Initialize with animation
-    animateInitialLoad();
-    
-    console.log('Filtering initialized successfully');
+    console.log('Autodesk filtering initialized successfully!');
   }, 500);
 }
 
