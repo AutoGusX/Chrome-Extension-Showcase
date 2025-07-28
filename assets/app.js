@@ -5,54 +5,59 @@ const extensionsData = [
   {
     id: 'acc-navigator',
     title: 'ACC Navigator',
-    description: 'Enhanced navigation and workflow optimization for Autodesk Construction Cloud with advanced project management features.',
+    description: 'Easy navigation for Autodesk Construction Cloud. Add a side bar to ACC so you can access every module and submodule from one integrated panel. Track your favorites for easy access on projects.',
     status: 'published',
     products: ['acc'],
     icon: 'fas fa-compass',
-    version: '2.1.0',
-    lastUpdated: '2024-12-20',
-    author: 'Gus Quade',
-    installUrl: '#',
+    version: '2.8',
+    lastUpdated: 'July 10, 2025',
+    author: 'AutoGus',
+    rating: '5.0 (4 ratings)',
+    users: '26 users',
+    installUrl: 'https://chromewebstore.google.com/detail/acc-navigator/iajpnhmfnkmmemcmcnnccanbhicccabm',
     githubUrl: '#',
-    tags: ['acc', 'navigation', 'workflow', 'construction'],
+    tags: ['acc', 'navigation', 'watermark', 'favorites'],
     features: [
-      'Enhanced project navigation',
-      'Quick access to frequently used tools',
-      'Streamlined document management',
-      'Custom dashboard views'
+      'Integrated sidebar navigation for all ACC modules',
+      'Bookmark and favorites management',
+      'Watermark functionality with customizable colors and text',
+      'Rearrangeable bookmarks and favorites',
+      'Quick access to all submodules'
     ]
   },
   {
     id: 'fusion-manage-admin-utilities',
     title: 'Fusion Manage Advanced Admin Utilities',
-    description: 'Comprehensive administrative tools for Fusion Manage PLM with enhanced user management, system configuration, and maintenance features.',
+    description: 'Advanced admin utilities for Fusion Manage PLM with Global Variable Manager, Copy Workspace Views, and System Logs Viewer tools.',
     status: 'published',
     products: ['fusion-manage'],
     icon: 'fas fa-tools',
-    version: '3.2.1',
-    lastUpdated: '2024-12-18',
-    author: 'Gus Quade',
-    installUrl: '#',
+    version: '2.2.1',
+    lastUpdated: 'July 25, 2025',
+    author: 'AutoGus',
+    rating: '5.0 (2 ratings)',
+    users: '8 users',
+    installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-ad/nhgbolfnmkimbifadlailgjlcciodkfh',
     githubUrl: '#',
-    tags: ['fusion-manage', 'admin', 'utilities', 'management'],
+    tags: ['fusion-manage', 'admin', 'variables', 'workspace'],
     features: [
-      'Advanced user management',
-      'System configuration tools',
-      'Bulk operations support',
-      'Enhanced reporting capabilities'
+      'Global Variable Manager with view, modify, and create capabilities',
+      'Copy Workspace Views between users for easy onboarding',
+      'System Logs Viewer with summary and Excel export',
+      'Integration with scripting editor for variable management'
     ]
   },
   {
     id: 'fusion-manage-fishbone-diagram',
-    title: 'Fusion Manage Fishbone Diagram Tool',
+    title: 'Fishbone Diagram for PLM',
     description: 'Create and manage fishbone (Ishikawa) diagrams directly within Fusion Manage for root cause analysis and quality management.',
     status: 'published',
     products: ['fusion-manage'],
     icon: 'fas fa-project-diagram',
     version: '1.5.2',
     lastUpdated: '2024-12-22',
-    author: 'Gus Quade',
-    installUrl: '#',
+    author: 'AutoGus',
+    installUrl: 'https://chromewebstore.google.com/detail/fishbone-diagram-for-plm/kpmokllfhkmengcejeegnhgekeebabga',
     githubUrl: 'https://github.com/user/fishbone-diagram-tool',
     tags: ['fusion-manage', 'quality', 'analysis', 'diagrams'],
     features: [
@@ -71,8 +76,8 @@ const extensionsData = [
     icon: 'fas fa-clipboard',
     version: '1.8.0',
     lastUpdated: '2024-12-15',
-    author: 'Gus Quade',
-    installUrl: '#',
+    author: 'AutoGus',
+    installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-cl/miicacedigmcjikfaiimmogicaedocmj',
     githubUrl: '#',
     tags: ['fusion-manage', 'clipboard', 'productivity', 'data'],
     features: [
@@ -166,8 +171,8 @@ const extensionsData = [
     icon: 'fas fa-link',
     version: '1.3.2',
     lastUpdated: '2024-12-17',
-    author: 'Gus Quade',
-    installUrl: '#',
+    author: 'AutoGus',
+    installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-link-op/glgjlippogdaimfdlcbccnjkhfknidfl',
     githubUrl: '#',
     tags: ['fusion-operations', 'links', 'navigation', 'manufacturing'],
     features: [
@@ -180,21 +185,23 @@ const extensionsData = [
   {
     id: 'fusion-operations-favorites',
     title: 'Fusion Operations Favorites',
-    description: 'Enhanced favorites and bookmarking system for Fusion Operations with advanced organization and quick access features.',
+    description: 'Add favorites functionality to Fusion Operations. This extension adds simple stars to each submodule so you can create a quick list of favorites for navigation ease.',
     status: 'published',
     products: ['fusion-operations'],
     icon: 'fas fa-star',
-    version: '2.0.1',
-    lastUpdated: '2024-12-16',
-    author: 'Gus Quade',
-    installUrl: '#',
+    version: '1.1',
+    lastUpdated: 'July 26, 2025',
+    author: 'AutoGus',
+    rating: 'No ratings yet',
+    users: 'Available',
+    installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-favorit/jbglnonjmffhfmmcoibmanbhdgapahbh',
     githubUrl: '#',
-    tags: ['fusion-operations', 'favorites', 'bookmarks', 'organization'],
+    tags: ['fusion-operations', 'favorites', 'navigation', 'mes'],
     features: [
-      'Advanced bookmark organization',
-      'Quick access panels',
-      'Tag-based categorization',
-      'Export and sync capabilities'
+      'Simple star-based favoriting system',
+      'Quick navigation to favorite submodules',
+      'Rearrangeable favorites order',
+      'Bug fixes for dashboard clickability'
     ]
   },
   {
@@ -366,6 +373,8 @@ class ExtensionManager {
           <span><i class="fas fa-tag"></i> Version: ${extension.version}</span>
           <span><i class="fas fa-calendar"></i> Updated: ${extension.lastUpdated}</span>
           <span><i class="fas fa-user"></i> ${extension.author}</span>
+          ${extension.rating ? `<span><i class="fas fa-star"></i> ${extension.rating}</span>` : ''}
+          ${extension.users ? `<span><i class="fas fa-users"></i> ${extension.users}</span>` : ''}
         </div>
         
         <div class="extension-tags">
@@ -382,9 +391,9 @@ class ExtensionManager {
         ` : ''}
         
         <div class="extension-actions">
-          ${extension.installUrl ? `
+          ${extension.installUrl && extension.installUrl !== '#' ? `
             <a href="${extension.installUrl}" target="_blank" class="btn btn-primary">
-              <i class="fas fa-download"></i> Install
+              <i class="fab fa-chrome"></i> View in Chrome Store
             </a>
           ` : ''}
           ${extension.githubUrl ? `
