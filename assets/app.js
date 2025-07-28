@@ -396,9 +396,9 @@ class ExtensionManager {
               <i class="fab fa-chrome"></i> View in Chrome Store
             </a>
           ` : ''}
-          ${extension.githubUrl ? `
+          ${extension.githubUrl && extension.githubUrl !== '#' ? `
             <a href="${extension.githubUrl}" target="_blank" class="btn btn-secondary">
-              <i class="fab fa-github"></i> View Source
+              <i class="fas fa-download"></i> Download Source
             </a>
           ` : ''}
           <button class="btn btn-secondary" onclick="extensionManager.showDetails('${extension.id}')">
