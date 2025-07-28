@@ -2,59 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chrome Extensions Showcase</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="A sleek showcase of my Chrome Extensions">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  
-  <!-- Docsify Theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
-  
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/style.css">
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autodesk Chrome Extensions Hub</title>
+  <meta name="description" content="A comprehensive collection of Chrome extensions for Autodesk products">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/app-styles.css">
 </head>
-<body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'Chrome Extensions Showcase',
-      repo: '',
-      loadSidebar: true,
-      loadNavbar: false,
-      maxLevel: 3,
-      subMaxLevel: 2,
-      auto2top: true,
-      search: {
-        maxAge: 86400000,
-        paths: 'auto',
-        placeholder: 'Search extensions...',
-        noData: 'No results found!',
-        depth: 3
-      },
-      plugins: [
-        function(hook, vm) {
-          hook.mounted(function() {
-            // Initialize extension filtering
-            initializeFiltering();
-          });
-        }
-      ]
-    }
-  </script>
-  
-  <!-- Docsify Core -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  
-  <!-- Search Plugin -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  
-  <!-- Custom JavaScript -->
-  <script src="assets/main.js"></script>
+<body data-theme="dark">
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fab fa-chrome"></i>
+          <span>Autodesk Extensions Hub</span>
+        </div>
+        
+        <div class="header-controls">
+          <span class="theme-label">Select Theme:</span>
+          <div class="theme-selector">
+            <button class="theme-btn" data-theme="light">Light Theme</button>
+            <button class="theme-btn active" data-theme="dark">Dark Theme</button>
+            <button class="theme-btn" data-theme="black">Black Theme</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1 class="hero-title">Autodesk Chrome Extensions</h1>
+        <p class="hero-subtitle">
+          Enhancing Autodesk User Experiences with Chrome Extensions, powered by Autodesk Platform Services
+        </p>
+        
+        <div class="status-notice">
+          <p><strong>Review changes by June 23, 2025</strong></p>
+          <p>Connected to <strong>Autodesk Platform Services</strong></p>
+        </div>
+        
+        <div class="disclaimer">
+          <p>
+            These extensions are developed by Gus Quade, Platform Solutions Engineer at Autodesk. 
+            All extensions integrate with official Autodesk Platform Services and APIs. 
+            For support, questions, or extension ideas, please reach out via the contact options below.
+          </p>
+          <div class="contact-info" style="margin-top: 1rem; text-align: center;">
+            <a href="mailto:gus.quade@autodesk.com?subject=Chrome%20Extension%20Idea%20Submission" 
+               class="contact-link">
+              <i class="fas fa-envelope"></i> Submit Extension Ideas
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filter Section -->
+      <section class="filters">
+        <div class="filter-group">
+          <label>Filter by Status:</label>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Extensions</button>
+            <button class="filter-btn" data-filter="published">Published</button>
+            <button class="filter-btn" data-filter="in-development">In Development</button>
+            <button class="filter-btn" data-filter="concept">Concept</button>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <label>Filter by Product:</label>
+          <div class="filter-buttons">
+            <button class="filter-btn" data-filter="fusion-manage">Fusion Manage</button>
+            <button class="filter-btn" data-filter="acc">ACC</button>
+            <button class="filter-btn" data-filter="fusion-operations">Fusion Operations</button>
+            <button class="filter-btn" data-filter="tandem">Tandem</button>
+                         <button class="filter-btn" data-filter="upchain">Upchain</button>
+             <button class="filter-btn" data-filter="vault">Vault</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extensions Grid -->
+      <section class="extensions-grid" id="extensions-grid">
+        <!-- Extensions will be populated here -->
+      </section>
+
+      <!-- Framework Changes / Updates Section -->
+      <section class="updates-section">
+        <h2>Recent Updates</h2>
+        <div class="updates-table-container">
+          <table class="updates-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Extension</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody id="updates-tbody">
+              <!-- Updates will be populated here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="assets/app.js"></script>
 </body>
 </html> 
