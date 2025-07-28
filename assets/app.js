@@ -15,8 +15,8 @@ const extensionsData = [
     rating: '5.0 (4 ratings)',
     users: '26 users',
     installUrl: 'https://chromewebstore.google.com/detail/acc-navigator/iajpnhmfnkmmemcmcnnccanbhicccabm',
-    githubUrl: '#',
-    tags: ['acc', 'navigation', 'watermark', 'favorites'],
+    githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/ACC%20Nav%207-9-25.zip',
+    tags: ['acc'],
     features: [
       'Integrated sidebar navigation for all ACC modules',
       'Bookmark and favorites management',
@@ -38,8 +38,8 @@ const extensionsData = [
     rating: '5.0 (2 ratings)',
     users: '8 users',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-ad/nhgbolfnmkimbifadlailgjlcciodkfh',
-    githubUrl: '#',
-    tags: ['fusion-manage', 'admin', 'variables', 'workspace'],
+    githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Admin%20Utilities%207-24-25.zip',
+    tags: ['fusion-manage'],
     features: [
       'Global Variable Manager with view, modify, and create capabilities',
       'Copy Workspace Views between users for easy onboarding',
@@ -58,8 +58,8 @@ const extensionsData = [
     lastUpdated: '2024-12-22',
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fishbone-diagram-for-plm/kpmokllfhkmengcejeegnhgekeebabga',
-    githubUrl: 'https://github.com/user/fishbone-diagram-tool',
-    tags: ['fusion-manage', 'quality', 'analysis', 'diagrams'],
+    githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Fishbone%20Daigram%207-22-25%20final.zip',
+    tags: ['fusion-manage'],
     features: [
       'Interactive diagram creation',
       'Template library with industry standards',
@@ -78,8 +78,8 @@ const extensionsData = [
     lastUpdated: '2024-12-15',
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-cl/miicacedigmcjikfaiimmogicaedocmj',
-    githubUrl: '#',
-    tags: ['fusion-manage', 'clipboard', 'productivity', 'data'],
+    githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Clipboard%206-12-25.zip',
+    tags: ['fusion-manage'],
     features: [
       'Multi-format data copying',
       'Advanced paste transformations',
@@ -98,7 +98,7 @@ const extensionsData = [
     lastUpdated: '2024-12-23',
     author: 'Gus Quade',
     githubUrl: '#',
-    tags: ['fusion-manage', 'kanban', 'workflow', 'visualization'],
+    tags: ['fusion-manage'],
     features: [
       'Drag-and-drop task management',
       'Real-time workflow visualization',
@@ -135,7 +135,7 @@ const extensionsData = [
     lastUpdated: '2024-12-21',
     author: 'Gus Quade',
     githubUrl: '#',
-    tags: ['tandem', 'operations', 'facilities', 'monitoring'],
+    tags: ['tandem','fusion-manage'],
     features: [
       'Real-time facility monitoring',
       'Advanced analytics dashboard',
@@ -154,7 +154,7 @@ const extensionsData = [
     lastUpdated: '2024-12-20',
     author: 'Gus Quade',
     githubUrl: '#',
-    tags: ['fusion-manage', 'digital-thread', 'lifecycle', 'visualization'],
+    tags: ['fusion-manage'],
     features: [
       'Complete lifecycle visualization',
       'Interactive relationship mapping',
@@ -174,7 +174,7 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-link-op/glgjlippogdaimfdlcbccnjkhfknidfl',
     githubUrl: '#',
-    tags: ['fusion-operations', 'links', 'navigation', 'manufacturing'],
+    tags: ['fusion-operations'],
     features: [
       'Smart URL recognition',
       'Quick access toolbar',
@@ -195,8 +195,8 @@ const extensionsData = [
     rating: 'No ratings yet',
     users: 'Available',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-favorit/jbglnonjmffhfmmcoibmanbhdgapahbh',
-    githubUrl: '#',
-    tags: ['fusion-operations', 'favorites', 'navigation', 'mes'],
+    githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Operations%20zfavorites%207-26-25.zip',
+    tags: ['fusion-operations'],
     features: [
       'Simple star-based favoriting system',
       'Quick navigation to favorite submodules',
@@ -228,54 +228,14 @@ const extensionsData = [
 // ===== RECENT UPDATES DATA =====
 const updatesData = [
   {
-    date: 'December 24, 2024',
-    extension: 'Vault Panel for Fusion Industry Cloud',
-    description: 'Enhanced cloud synchronization and improved document management panel'
+    date: 'July 28, 2025',
+    extension: 'ALL Extensions',
+    description: 'Initialized Autodesk Chrome Extension Hub page'
   },
   {
-    date: 'December 23, 2024',
-    extension: 'Fusion Manage Kanban Viewer',
-    description: 'Added team collaboration features and custom board configurations'
-  },
-  {
-    date: 'December 22, 2024',
-    extension: 'Fusion Manage Fishbone Diagram Tool',
-    description: 'Published version 1.5.2 with enhanced template library and PLM integration'
-  },
-  {
-    date: 'December 21, 2024',
-    extension: 'Tandem Ops',
-    description: 'Improved analytics dashboard and added IoT sensor integration capabilities'
-  },
-  {
-    date: 'December 20, 2024',
-    extension: 'ACC Navigator & Digital Thread Viewer',
-    description: 'Updated ACC Navigator to v2.1.0 and enhanced Digital Thread visualization'
-  },
-  {
-    date: 'December 19, 2024',
-    extension: 'Upchain BOM Push to Fusion Manage',
-    description: 'Initial concept development for automated BOM synchronization'
-  },
-  {
-    date: 'December 18, 2024',
-    extension: 'Fusion Manage Advanced Admin Utilities',
-    description: 'Released version 3.2.1 with enhanced reporting and bulk operations'
-  },
-  {
-    date: 'December 17, 2024',
-    extension: 'Fusion Operations Link Opener',
-    description: 'Updated to version 1.3.2 with improved URL recognition and shortcuts'
-  },
-  {
-    date: 'December 16, 2024',
+    date: 'July 25, 2025',
     extension: 'Fusion Operations Favorites',
-    description: 'Released version 2.0.1 with tag-based categorization and sync features'
-  },
-  {
-    date: 'December 15, 2024',
-    extension: 'Fusion Manage Advanced Clipboard',
-    description: 'Updated clipboard functionality with cross-workspace operations support'
+    description: 'Fixed bug where Dashboard button was not clickable. Feature add - rearrange the order of bookmarks.'
   }
 ];
 
