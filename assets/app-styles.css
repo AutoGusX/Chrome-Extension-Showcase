@@ -661,4 +661,129 @@ body {
 
 .contact-link i {
   font-size: 0.875rem;
+}
+
+/* ===== EXTENSION THUMBNAILS ===== */
+.extension-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.extension-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== VIDEO MODAL ===== */
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.video-modal-content {
+  position: relative;
+  background-color: var(--bg-card);
+  margin: 5% auto;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+
+.video-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.video-modal-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.video-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.video-modal-close:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.video-modal-body {
+  padding: 0;
+}
+
+#demo-video {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ===== WATCH DEMO BUTTON ===== */
+.btn-demo {
+  background-color: var(--autodesk-blue);
+  color: white;
+  border-color: var(--autodesk-blue);
+}
+
+.btn-demo:hover {
+  background-color: #0577a8;
+  border-color: #0577a8;
+  color: white;
+}
+
+/* ===== RESPONSIVE VIDEO MODAL ===== */
+@media (max-width: 768px) {
+  .video-modal-content {
+    width: 95%;
+    margin: 10% auto;
+    max-height: 70vh;
+  }
+  
+  .video-modal-header {
+    padding: 1rem;
+  }
+  
+  .video-modal-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  #demo-video {
+    height: 300px;
+  }
+  
+  .extension-thumbnail {
+    height: 150px;
+  }
 } 

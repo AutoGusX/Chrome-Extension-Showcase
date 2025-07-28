@@ -16,6 +16,8 @@ const extensionsData = [
     users: '26 users',
     installUrl: 'https://chromewebstore.google.com/detail/acc-navigator/iajpnhmfnkmmemcmcnnccanbhicccabm',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/ACC%20Nav%207-9-25.zip',
+    thumbnailUrl: 'assets/ACC Navigator Thumbnail.png',
+    videoUrl: '89eN7T9zkRE',
     tags: ['acc'],
     features: [
       'Integrated sidebar navigation for all ACC modules',
@@ -39,6 +41,8 @@ const extensionsData = [
     users: '8 users',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-ad/nhgbolfnmkimbifadlailgjlcciodkfh',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Admin%20Utilities%207-24-25.zip',
+    thumbnailUrl: null,
+    videoUrl: '89eN7T9zkRE',
     tags: ['fusion-manage'],
     features: [
       'Global Variable Manager with view, modify, and create capabilities',
@@ -59,6 +63,8 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fishbone-diagram-for-plm/kpmokllfhkmengcejeegnhgekeebabga',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Fishbone%20Daigram%207-22-25%20final.zip',
+    thumbnailUrl: null,
+    videoUrl: '89eN7T9zkRE',
     tags: ['fusion-manage'],
     features: [
       'Interactive diagram creation',
@@ -79,6 +85,8 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-cl/miicacedigmcjikfaiimmogicaedocmj',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Clipboard%206-12-25.zip',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['fusion-manage'],
     features: [
       'Multi-format data copying',
@@ -98,6 +106,8 @@ const extensionsData = [
     lastUpdated: '2024-12-23',
     author: 'Gus Quade',
     githubUrl: '#',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['fusion-manage'],
     features: [
       'Drag-and-drop task management',
@@ -116,6 +126,8 @@ const extensionsData = [
     version: '0.1.0',
     lastUpdated: '2024-12-19',
     author: 'Gus Quade',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['upchain', 'fusion-manage', 'bom', 'integration'],
     features: [
       'Automated BOM synchronization',
@@ -135,6 +147,8 @@ const extensionsData = [
     lastUpdated: '2024-12-21',
     author: 'Gus Quade',
     githubUrl: '#',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['tandem','fusion-manage'],
     features: [
       'Real-time facility monitoring',
@@ -154,6 +168,8 @@ const extensionsData = [
     lastUpdated: '2024-12-20',
     author: 'Gus Quade',
     githubUrl: '#',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['fusion-manage'],
     features: [
       'Complete lifecycle visualization',
@@ -174,6 +190,8 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-link-op/glgjlippogdaimfdlcbccnjkhfknidfl',
     githubUrl: '#',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['fusion-operations'],
     features: [
       'Smart URL recognition',
@@ -196,6 +214,8 @@ const extensionsData = [
     users: 'Available',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-favorit/jbglnonjmffhfmmcoibmanbhdgapahbh',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Operations%20zfavorites%207-26-25.zip',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['fusion-operations'],
     features: [
       'Simple star-based favoriting system',
@@ -215,6 +235,8 @@ const extensionsData = [
     lastUpdated: '2024-12-24',
     author: 'Gus Quade',
     githubUrl: '#',
+    thumbnailUrl: null,
+    videoUrl: null,
     tags: ['vault', 'fusion-industry-cloud', 'documents', 'version-control'],
     features: [
       'Seamless Vault integration',
@@ -316,6 +338,9 @@ class ExtensionManager {
     
     return `
       <div class="extension-card" data-status="${extension.status}" data-products="${extension.products.join(',')}">
+        ${extension.thumbnailUrl ? `
+          <img src="${extension.thumbnailUrl}" alt="${extension.title} thumbnail" class="extension-thumbnail" onclick="extensionManager.openThumbnailModal('${extension.thumbnailUrl}', '${extension.title}')">
+        ` : ''}
         <div class="extension-header">
           <div class="extension-icon">
             <i class="${extension.icon}"></i>
@@ -355,6 +380,11 @@ class ExtensionManager {
             <a href="${extension.installUrl}" target="_blank" class="btn btn-primary">
               <i class="fab fa-chrome"></i> View in Chrome Store
             </a>
+          ` : ''}
+          ${extension.videoUrl ? `
+            <button class="btn btn-demo" onclick="extensionManager.openVideoModal('${extension.videoUrl}', '${extension.title}')">
+              <i class="fas fa-play"></i> Watch Demo
+            </button>
           ` : ''}
           ${extension.githubUrl && extension.githubUrl !== '#' ? `
             <a href="${extension.githubUrl}" target="_blank" class="btn btn-secondary">
@@ -416,6 +446,36 @@ class ExtensionManager {
 
     // Create modal or detailed view
     alert(`Extension Details:\n\nName: ${extension.title}\nStatus: ${extension.status}\nVersion: ${extension.version}\nDescription: ${extension.description}\n\nFeatures:\n${extension.features ? extension.features.join('\n- ') : 'No features listed'}`);
+  }
+
+  openVideoModal(youtubeVideoId, title) {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('demo-video');
+    const modalTitle = document.getElementById('video-modal-title');
+    
+    // Construct YouTube embed URL
+    const embedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?si=hm3c-aD8dNDJTLag`;
+    
+    iframe.src = embedUrl;
+    modalTitle.textContent = `${title} - Demo`;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+
+  openThumbnailModal(thumbnailUrl, title) {
+    // For now, just open the image in a new tab
+    // You could implement a full image modal if desired
+    window.open(thumbnailUrl, '_blank');
+  }
+
+  closeVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('demo-video');
+    
+    // Stop the YouTube video by clearing the src
+    iframe.src = '';
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
   }
 }
 
@@ -579,11 +639,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add smooth scrolling
   addSmoothScrolling();
   
+  // Initialize video modal event listeners
+  initializeVideoModal();
+  
   // Add loading animation
   document.body.classList.add('loaded');
   
   console.log('🚀 Autodesk Chrome Extensions Hub initialized successfully!');
 });
+
+// ===== VIDEO MODAL INITIALIZATION =====
+function initializeVideoModal() {
+  const modal = document.getElementById('video-modal');
+  const closeBtn = document.getElementById('close-video-modal');
+  
+  // Close button click
+  closeBtn.addEventListener('click', () => {
+    window.extensionManager.closeVideoModal();
+  });
+  
+  // Click outside modal to close
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      window.extensionManager.closeVideoModal();
+    }
+  });
+  
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+      window.extensionManager.closeVideoModal();
+    }
+  });
+}
 
 // ===== GLOBAL FUNCTIONS =====
 // Make extensionManager available globally for onclick handlers
