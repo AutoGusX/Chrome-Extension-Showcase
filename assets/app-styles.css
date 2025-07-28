@@ -1,0 +1,578 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+  /* Autodesk Brand Colors */
+  --autodesk-orange: #FF6B00;
+  --autodesk-blue: #0696D7;
+  --autodesk-yellow: #FFFF00;
+  --autodesk-green: #5CB85C;
+  
+  /* Light Theme */
+  --light-bg-primary: #ffffff;
+  --light-bg-secondary: #f8f9fa;
+  --light-bg-card: #ffffff;
+  --light-text-primary: #212529;
+  --light-text-secondary: #6c757d;
+  --light-border: #dee2e6;
+  --light-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  
+  /* Dark Theme */
+  --dark-bg-primary: #1a1a1a;
+  --dark-bg-secondary: #2d2d2d;
+  --dark-bg-card: #2d2d2d;
+  --dark-text-primary: #ffffff;
+  --dark-text-secondary: #b0b0b0;
+  --dark-border: #404040;
+  --dark-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  
+  /* Black Theme */
+  --black-bg-primary: #000000;
+  --black-bg-secondary: #111111;
+  --black-bg-card: #111111;
+  --black-text-primary: #ffffff;
+  --black-text-secondary: #cccccc;
+  --black-border: #333333;
+  --black-shadow: 0 2px 10px rgba(255,255,255,0.1);
+}
+
+/* ===== THEME IMPLEMENTATIONS ===== */
+body[data-theme="light"] {
+  --bg-primary: var(--light-bg-primary);
+  --bg-secondary: var(--light-bg-secondary);
+  --bg-card: var(--light-bg-card);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --border-color: var(--light-border);
+  --shadow: var(--light-shadow);
+}
+
+body[data-theme="dark"] {
+  --bg-primary: var(--dark-bg-primary);
+  --bg-secondary: var(--dark-bg-secondary);
+  --bg-card: var(--dark-bg-card);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --border-color: var(--dark-border);
+  --shadow: var(--dark-shadow);
+}
+
+body[data-theme="black"] {
+  --bg-primary: var(--black-bg-primary);
+  --bg-secondary: var(--black-bg-secondary);
+  --bg-card: var(--black-bg-card);
+  --text-primary: var(--black-text-primary);
+  --text-secondary: var(--black-text-secondary);
+  --border-color: var(--black-border);
+  --shadow: var(--black-shadow);
+}
+
+/* ===== GLOBAL STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.logo i {
+  color: var(--autodesk-orange);
+  font-size: 1.75rem;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.theme-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.theme-selector {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.theme-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.theme-btn:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--autodesk-orange);
+}
+
+.theme-btn.active {
+  background-color: var(--autodesk-orange);
+  color: white;
+  border-color: var(--autodesk-orange);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+  padding: 2rem 0;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.status-notice {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: var(--shadow);
+}
+
+.status-notice p {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.status-notice p:last-child {
+  margin-bottom: 0;
+}
+
+.disclaimer {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== FILTERS ===== */
+.filters {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: var(--autodesk-blue);
+  background-color: var(--bg-card);
+}
+
+.filter-btn.active {
+  background-color: var(--autodesk-blue);
+  color: white;
+  border-color: var(--autodesk-blue);
+}
+
+/* ===== EXTENSIONS GRID ===== */
+.extensions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.extension-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.extension-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-color: var(--autodesk-orange);
+}
+
+.extension-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.extension-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: var(--autodesk-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.extension-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.extension-status.published {
+  background-color: var(--autodesk-green);
+  color: white;
+}
+
+.extension-status.in-development {
+  background-color: var(--autodesk-yellow);
+  color: #333;
+}
+
+.extension-status.concept {
+  background-color: var(--text-secondary);
+  color: white;
+}
+
+.extension-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.extension-description {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.extension-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.extension-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.extension-tag {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.extension-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--autodesk-orange);
+  color: white;
+  border-color: var(--autodesk-orange);
+}
+
+.btn-primary:hover {
+  background-color: #e55a00;
+  border-color: #e55a00;
+}
+
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-card);
+  border-color: var(--autodesk-blue);
+}
+
+/* ===== UPDATES SECTION ===== */
+.updates-section {
+  margin-bottom: 3rem;
+}
+
+.updates-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.updates-table-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.updates-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.updates-table th,
+.updates-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.updates-table th {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.updates-table td {
+  color: var(--text-secondary);
+}
+
+.updates-table tr:last-child td {
+  border-bottom: none;
+}
+
+.updates-table tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .extensions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .updates-table-container {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .extension-card {
+    padding: 1.5rem;
+  }
+  
+  .theme-selector {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .theme-btn {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.extension-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.extension-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.extension-card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+/* ===== CONTACT LINK STYLING ===== */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--autodesk-orange);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(255, 107, 0, 0.2);
+}
+
+.contact-link:hover {
+  background-color: #e55a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+.contact-link i {
+  font-size: 1rem;
+} 
