@@ -37,86 +37,94 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="main">
-    <div class="container">
-      <!-- Hero Section -->
-      <section class="hero">
-        <h1 class="hero-title">Autodesk Chrome Extensions</h1>
-        <p class="hero-subtitle">
-          Enhancing Autodesk User Experiences with Chrome Extensions, powered by Autodesk Platform Services
-        </p>
-        
-        <div class="status-notice">
-          <p><strong>Review changes by June 23, 2025</strong></p>
-          <p>Connected to <strong>Autodesk Platform Services</strong></p>
-        </div>
-        
-        <div class="disclaimer">
-          <p>
-            These extensions are developed by Gus Quade, Platform Solutions Engineer at Autodesk. 
-            All extensions integrate with official Autodesk Platform Services and APIs. 
-            For support, questions, or extension ideas, please reach out via the contact options below.
+    <!-- Main Layout Container -->
+  <div class="layout-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <!-- Hero Section -->
+        <section class="hero-sidebar">
+          <h1 class="hero-title">Autodesk Chrome Extensions</h1>
+          <p class="hero-subtitle">
+            Enhancing Autodesk User Experiences with Chrome Extensions, powered by Autodesk Platform Services
           </p>
-          <div class="contact-info" style="margin-top: 1rem; text-align: center;">
-            <a href="mailto:gus.quade@autodesk.com?subject=Chrome%20Extension%20Idea%20Submission" 
-               class="contact-link">
-              <i class="fas fa-envelope"></i> Submit Extension Ideas
-            </a>
+          
+          <div class="status-notice">
+            <p><strong>Review changes by June 23, 2025</strong></p>
+            <p>Connected to <strong>Autodesk Platform Services</strong></p>
           </div>
-        </div>
-      </section>
-
-      <!-- Filter Section -->
-      <section class="filters">
-        <div class="filter-group">
-          <label>Filter by Status:</label>
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Extensions</button>
-            <button class="filter-btn" data-filter="published">Published</button>
-            <button class="filter-btn" data-filter="in-development">In Development</button>
-            <button class="filter-btn" data-filter="concept">Concept</button>
+          
+          <div class="disclaimer">
+            <p>
+              These extensions are developed by Gus Quade, Platform Solutions Engineer at Autodesk. 
+              All extensions integrate with official Autodesk Platform Services and APIs. 
+              For support, questions, or extension ideas, please reach out via the contact options below.
+            </p>
+            <div class="contact-info">
+              <a href="mailto:gus.quade@autodesk.com?subject=Chrome%20Extension%20Idea%20Submission" 
+                 class="contact-link">
+                <i class="fas fa-envelope"></i> Submit Extension Ideas
+              </a>
+            </div>
           </div>
-        </div>
-        
-        <div class="filter-group">
-          <label>Filter by Product:</label>
-          <div class="filter-buttons">
-            <button class="filter-btn" data-filter="fusion-manage">Fusion Manage</button>
-            <button class="filter-btn" data-filter="acc">ACC</button>
-            <button class="filter-btn" data-filter="fusion-operations">Fusion Operations</button>
-            <button class="filter-btn" data-filter="tandem">Tandem</button>
-                         <button class="filter-btn" data-filter="upchain">Upchain</button>
-             <button class="filter-btn" data-filter="vault">Vault</button>
+        </section>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-container">
+        <!-- Filter Section -->
+        <section class="filters">
+          <div class="filter-group">
+            <label>Filter by Status:</label>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="all">All Extensions</button>
+              <button class="filter-btn" data-filter="published">Published</button>
+              <button class="filter-btn" data-filter="in-development">In Development</button>
+              <button class="filter-btn" data-filter="concept">Concept</button>
+            </div>
           </div>
-        </div>
-      </section>
+          
+          <div class="filter-group">
+            <label>Filter by Product:</label>
+            <div class="filter-buttons">
+              <button class="filter-btn" data-filter="fusion-manage">Fusion Manage</button>
+              <button class="filter-btn" data-filter="acc">ACC</button>
+              <button class="filter-btn" data-filter="fusion-operations">Fusion Operations</button>
+              <button class="filter-btn" data-filter="tandem">Tandem</button>
+              <button class="filter-btn" data-filter="upchain">Upchain</button>
+              <button class="filter-btn" data-filter="vault">Vault</button>
+            </div>
+          </div>
+        </section>
 
-      <!-- Extensions Grid -->
-      <section class="extensions-grid" id="extensions-grid">
-        <!-- Extensions will be populated here -->
-      </section>
+        <!-- Extensions Grid -->
+        <section class="extensions-grid" id="extensions-grid">
+          <!-- Extensions will be populated here -->
+        </section>
 
-      <!-- Framework Changes / Updates Section -->
-      <section class="updates-section">
-        <h2>Recent Updates</h2>
-        <div class="updates-table-container">
-          <table class="updates-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Extension</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody id="updates-tbody">
-              <!-- Updates will be populated here -->
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </div>
-  </main>
+        <!-- Framework Changes / Updates Section -->
+        <section class="updates-section">
+          <h2>Recent Updates</h2>
+          <div class="updates-table-container">
+            <table class="updates-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Extension</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody id="updates-tbody">
+                <!-- Updates will be populated here -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
 
   <!-- JavaScript -->
   <script src="assets/app.js"></script>
