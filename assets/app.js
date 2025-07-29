@@ -63,7 +63,7 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fishbone-diagram-for-plm/kpmokllfhkmengcejeegnhgekeebabga',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Fishbone%20Daigram%207-22-25%20final.zip',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/Fishbone-Diagram-Thumbnail.png',
     videoUrl: '89eN7T9zkRE',
     tags: ['fusion-manage'],
     features: [
