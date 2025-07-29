@@ -187,15 +187,50 @@ body {
   transition: all 0.3s ease;
 }
 
-.layout-container.panel-open .main-content {
-  width: 33.33%; /* 1/3 of screen when panel is open */
-  padding: 1.5rem 1rem; /* Reduced padding for compressed view */
-  transition: all 0.3s ease;
+.layout-container.panel-open {
+  width: 33.33%;
+  position: relative;
+  z-index: 1;
+  flex-direction: column;
 }
 
 .layout-container.panel-open .sidebar {
-  width: 200px; /* Compressed sidebar but still readable */
-  transition: width 0.3s ease;
+  width: 100%;
+  height: auto;
+  position: static;
+  border-right: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem; /* Compressed padding */
+}
+
+.layout-container.panel-open .sidebar .hero-title {
+  font-size: 1.5rem; /* Smaller title when compressed */
+}
+
+.layout-container.panel-open .sidebar .hero-subtitle {
+  font-size: 0.9rem; /* Smaller subtitle */
+}
+
+.layout-container.panel-open .sidebar-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Add a small scroll hint */
+.layout-container.panel-open .main-content::before {
+  content: "👆 Scroll to see all extensions";
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.layout-container.panel-open .main-content {
+  width: 100%;
+  padding: 1rem 1.5rem; /* Reduced padding for compressed view */
+  transition: all 0.3s ease;
 }
 
 /* ===== SIDEBAR ===== */
@@ -344,10 +379,45 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Adjust grid when panel is open */
+/* Adjust grid when panel is open - stack in single column for better visibility */
 .layout-container.panel-open .extensions-grid {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  position: relative;
+}
+
+/* Fade indicator at bottom to show more content */
+.layout-container.panel-open .extensions-grid::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(transparent, var(--bg-primary));
+  pointer-events: none;
+}
+
+/* Custom scrollbar for compressed grid */
+.layout-container.panel-open .extensions-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.layout-container.panel-open .extensions-grid::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 3px;
+}
+
+.layout-container.panel-open .extensions-grid::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 3px;
+}
+
+.layout-container.panel-open .extensions-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
 }
 
 .extension-card {
@@ -963,6 +1033,37 @@ body {
 
 .extension-card.compact .extension-thumbnail {
   height: 100px;
+}
+
+/* Make cards more compact when panel is open */
+.layout-container.panel-open .extension-card {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.layout-container.panel-open .extension-card .extension-thumbnail {
+  height: 80px;
+  margin-bottom: 0.75rem;
+}
+
+.layout-container.panel-open .extension-card .extension-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.layout-container.panel-open .extension-card .extension-description {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  -webkit-line-clamp: 1; /* Show only 1 line when compressed */
+}
+
+.layout-container.panel-open .extension-card .extension-actions {
+  gap: 0.5rem;
+}
+
+.layout-container.panel-open .extension-card .btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
 }
 
 /* ===== VIDEO MODAL ===== */
