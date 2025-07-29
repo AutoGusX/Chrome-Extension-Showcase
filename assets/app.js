@@ -41,7 +41,7 @@ const extensionsData = [
     users: '8 users',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-ad/nhgbolfnmkimbifadlailgjlcciodkfh',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Admin%20Utilities%207-24-25.zip',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/AdminUtilities.png',
     videoUrl: '89eN7T9zkRE',
     tags: ['fusion-manage'],
     features: [
