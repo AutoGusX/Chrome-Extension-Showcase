@@ -41,7 +41,7 @@ const extensionsData = [
     users: '8 users',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-ad/nhgbolfnmkimbifadlailgjlcciodkfh',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Admin%20Utilities%207-24-25.zip',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/AdminUtilities.png',
     videoUrl: '89eN7T9zkRE',
     tags: ['fusion-manage'],
     features: [
@@ -63,7 +63,7 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fishbone-diagram-for-plm/kpmokllfhkmengcejeegnhgekeebabga',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Fishbone%20Daigram%207-22-25%20final.zip',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/Fishbone-Diagram-Thumbnail.png',
     videoUrl: '89eN7T9zkRE',
     tags: ['fusion-manage'],
     features: [
@@ -85,7 +85,7 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-cl/miicacedigmcjikfaiimmogicaedocmj',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Clipboard%206-12-25.zip',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/clipboard.png',
     videoUrl: null,
     tags: ['fusion-manage'],
     features: [
@@ -106,7 +106,7 @@ const extensionsData = [
     lastUpdated: '2024-12-23',
     author: 'Gus Quade',
     githubUrl: '#',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/kanban.png',
     videoUrl: null,
     tags: ['fusion-manage'],
     features: [
@@ -147,7 +147,7 @@ const extensionsData = [
     lastUpdated: '2024-12-21',
     author: 'Gus Quade',
     githubUrl: '#',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/TandemOps.png',
     videoUrl: null,
     tags: ['tandem','fusion-manage'],
     features: [
@@ -168,7 +168,7 @@ const extensionsData = [
     lastUpdated: '2024-12-20',
     author: 'Gus Quade',
     githubUrl: '#',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/digital-thread.png',
     videoUrl: null,
     tags: ['fusion-manage'],
     features: [
@@ -190,7 +190,7 @@ const extensionsData = [
     author: 'AutoGus',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-link-op/glgjlippogdaimfdlcbccnjkhfknidfl',
     githubUrl: '#',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/FOPS-link-opener.png',
     videoUrl: null,
     tags: ['fusion-operations'],
     features: [
@@ -214,7 +214,7 @@ const extensionsData = [
     users: 'Available',
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-favorit/jbglnonjmffhfmmcoibmanbhdgapahbh',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Operations%20zfavorites%207-26-25.zip',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/FOPS-Favorite.png',
     videoUrl: null,
     tags: ['fusion-operations'],
     features: [
@@ -235,7 +235,7 @@ const extensionsData = [
     lastUpdated: '2024-12-24',
     author: 'Gus Quade',
     githubUrl: '#',
-    thumbnailUrl: null,
+    thumbnailUrl: 'assets/Vault-Panel.png',
     videoUrl: null,
     tags: ['vault', 'fusion-industry-cloud', 'documents', 'version-control'],
     features: [
@@ -243,6 +243,27 @@ const extensionsData = [
       'Document management panel',
       'Version control workflows',
       'Cloud synchronization'
+    ]
+  },
+  {
+    id: 'fusion-manage-scripting-helper',
+    title: 'Fusion Manage Scripting Helper',
+    description: 'Embedded scripting reference and visual no-code script builder for Fusion Manage workflows.',
+    status: 'in-development',
+    products: ['fusion-manage'],
+    icon: 'fas fa-code',
+    version: '0.8.5',
+    lastUpdated: '2024-12-24',
+    author: 'Gus Quade',
+    githubUrl: '#',
+    thumbnailUrl: 'assets/scirpting-helper.png',
+    videoUrl: null,
+    tags: ['fusion-manage', 'scripting', 'automation', 'workflows'],
+    features: [
+      'Embedded scripting reference',
+      'Searchable and easy to paste scripts',
+      'Visualize and build workflows that become scripts',
+      'No-code script builder interface'
     ]
   }
 ];
