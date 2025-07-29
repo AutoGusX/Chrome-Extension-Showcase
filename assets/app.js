@@ -358,9 +358,11 @@ class ExtensionManager {
     const statusText = extension.status.replace('-', ' ').toUpperCase();
     
     return `
-      <div class="extension-card" data-status="${extension.status}" data-products="${extension.products.join(',')}">
+      <div class="extension-card" data-status="${extension.status}" data-products="${extension.products.join(',')}" data-extension-id="${extension.id}">
+        <div class="extension-card-clickable" onclick="extensionManager.openDetailsPanel('${extension.id}')"></div>
+        
         ${extension.thumbnailUrl ? `
-          <img src="${extension.thumbnailUrl}" alt="${extension.title} thumbnail" class="extension-thumbnail" onclick="extensionManager.openThumbnailModal('${extension.thumbnailUrl}', '${extension.title}')">
+          <img src="${extension.thumbnailUrl}" alt="${extension.title} thumbnail" class="extension-thumbnail">
         ` : ''}
         <div class="extension-header">
           <div class="extension-icon">
@@ -375,46 +377,17 @@ class ExtensionManager {
         <h3 class="extension-title">${extension.title}</h3>
         <p class="extension-description">${extension.description}</p>
         
-        <div class="extension-meta">
-          <span><i class="fas fa-tag"></i> Version: ${extension.version}</span>
-          <span><i class="fas fa-calendar"></i> Updated: ${extension.lastUpdated}</span>
-          <span><i class="fas fa-user"></i> ${extension.author}</span>
-          ${extension.rating ? `<span><i class="fas fa-star"></i> ${extension.rating}</span>` : ''}
-          ${extension.users ? `<span><i class="fas fa-users"></i> ${extension.users}</span>` : ''}
-        </div>
-        
-        <div class="extension-tags">
-          ${extension.tags.map(tag => `<span class="extension-tag">${tag}</span>`).join('')}
-        </div>
-        
-        ${extension.features ? `
-          <div class="extension-features">
-            <h4>Key Features:</h4>
-            <ul>
-              ${extension.features.map(feature => `<li>${feature}</li>`).join('')}
-            </ul>
-          </div>
-        ` : ''}
-        
         <div class="extension-actions">
           ${extension.installUrl && extension.installUrl !== '#' ? `
             <a href="${extension.installUrl}" target="_blank" class="btn btn-primary">
-              <i class="fab fa-chrome"></i> View in Chrome Store
+              <i class="fab fa-chrome"></i> Install
             </a>
           ` : ''}
           ${extension.videoUrl ? `
             <button class="btn btn-demo" onclick="extensionManager.openVideoModal('${extension.videoUrl}', '${extension.title}')">
-              <i class="fas fa-play"></i> Watch Demo
+              <i class="fas fa-play"></i> Demo
             </button>
           ` : ''}
-          ${extension.githubUrl && extension.githubUrl !== '#' ? `
-            <a href="${extension.githubUrl}" target="_blank" class="btn btn-secondary">
-              <i class="fas fa-download"></i> Download Source
-            </a>
-          ` : ''}
-          <button class="btn btn-secondary" onclick="extensionManager.showDetails('${extension.id}')">
-            <i class="fas fa-info-circle"></i> Details
-          </button>
         </div>
       </div>
     `;
@@ -461,14 +434,6 @@ class ExtensionManager {
     });
   }
 
-  showDetails(extensionId) {
-    const extension = this.extensions.find(ext => ext.id === extensionId);
-    if (!extension) return;
-
-    // Create modal or detailed view
-    alert(`Extension Details:\n\nName: ${extension.title}\nStatus: ${extension.status}\nVersion: ${extension.version}\nDescription: ${extension.description}\n\nFeatures:\n${extension.features ? extension.features.join('\n- ') : 'No features listed'}`);
-  }
-
   openVideoModal(youtubeVideoId, title) {
     const modal = document.getElementById('video-modal');
     const iframe = document.getElementById('demo-video');
@@ -483,12 +448,6 @@ class ExtensionManager {
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
   }
 
-  openThumbnailModal(thumbnailUrl, title) {
-    // For now, just open the image in a new tab
-    // You could implement a full image modal if desired
-    window.open(thumbnailUrl, '_blank');
-  }
-
   closeVideoModal() {
     const modal = document.getElementById('video-modal');
     const iframe = document.getElementById('demo-video');
@@ -497,6 +456,124 @@ class ExtensionManager {
     iframe.src = '';
     modal.style.display = 'none';
     document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+
+  openDetailsPanel(extensionId) {
+    const extension = this.extensions.find(ext => ext.id === extensionId);
+    if (!extension) return;
+
+    // Populate panel with extension data
+    this.populateDetailsPanel(extension);
+    
+    // Show panel and compress layout
+    const panel = document.getElementById('details-panel');
+    const layoutContainer = document.querySelector('.layout-container');
+    
+    panel.classList.add('open');
+    layoutContainer.classList.add('panel-open');
+    
+    // Prevent background scrolling on mobile
+    if (window.innerWidth <= 1024) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  closeDetailsPanel() {
+    const panel = document.getElementById('details-panel');
+    const layoutContainer = document.querySelector('.layout-container');
+    
+    panel.classList.remove('open');
+    layoutContainer.classList.remove('panel-open');
+    
+    // Restore scrolling
+    document.body.style.overflow = 'auto';
+  }
+
+  populateDetailsPanel(extension) {
+    // Update titles
+    document.getElementById('details-title-mobile').textContent = extension.title;
+    document.getElementById('details-title-desktop').textContent = extension.title;
+    
+    // Update thumbnail
+    const thumbnail = document.getElementById('details-thumbnail');
+    if (extension.thumbnailUrl) {
+      thumbnail.src = extension.thumbnailUrl;
+      thumbnail.alt = `${extension.title} thumbnail`;
+      thumbnail.style.display = 'block';
+    } else {
+      thumbnail.style.display = 'none';
+    }
+    
+    // Update status badge
+    const statusBadge = document.getElementById('details-status');
+    const statusClass = extension.status.replace('-', '');
+    const statusText = extension.status.replace('-', ' ').toUpperCase();
+    statusBadge.className = `details-status-badge ${statusClass}`;
+    statusBadge.innerHTML = `<i class="${this.getStatusIcon(extension.status)}"></i> ${statusText}`;
+    
+    // Update description
+    document.getElementById('details-description').textContent = extension.description;
+    
+    // Update actions
+    const actionsContainer = document.getElementById('details-actions');
+    actionsContainer.innerHTML = `
+      ${extension.installUrl && extension.installUrl !== '#' ? `
+        <a href="${extension.installUrl}" target="_blank" class="btn btn-primary">
+          <i class="fab fa-chrome"></i> View in Chrome Store
+        </a>
+      ` : ''}
+      ${extension.videoUrl ? `
+        <button class="btn btn-demo" onclick="extensionManager.openVideoModal('${extension.videoUrl}', '${extension.title}')">
+          <i class="fas fa-play"></i> Watch Demo
+        </button>
+      ` : ''}
+      ${extension.githubUrl && extension.githubUrl !== '#' ? `
+        <a href="${extension.githubUrl}" target="_blank" class="btn btn-secondary">
+          <i class="fas fa-download"></i> Download Source
+        </a>
+      ` : ''}
+    `;
+    
+    // Update features
+    const featuresContainer = document.getElementById('details-features');
+    if (extension.features && extension.features.length > 0) {
+      featuresContainer.innerHTML = extension.features.map(feature => `<li>${feature}</li>`).join('');
+    } else {
+      featuresContainer.innerHTML = '<li>No features listed</li>';
+    }
+    
+    // Update technical details
+    const metaContainer = document.getElementById('details-meta');
+    metaContainer.innerHTML = `
+      <div class="details-meta-item">
+        <div class="details-meta-label">Version</div>
+        <div class="details-meta-value">${extension.version}</div>
+      </div>
+      <div class="details-meta-item">
+        <div class="details-meta-label">Last Updated</div>
+        <div class="details-meta-value">${extension.lastUpdated}</div>
+      </div>
+      <div class="details-meta-item">
+        <div class="details-meta-label">Author</div>
+        <div class="details-meta-value">${extension.author}</div>
+      </div>
+      ${extension.rating ? `
+        <div class="details-meta-item">
+          <div class="details-meta-label">Rating</div>
+          <div class="details-meta-value">${extension.rating}</div>
+        </div>
+      ` : ''}
+      ${extension.users ? `
+        <div class="details-meta-item">
+          <div class="details-meta-label">Users</div>
+          <div class="details-meta-value">${extension.users}</div>
+        </div>
+      ` : ''}
+    `;
+    
+    // Update tags
+    const tagsContainer = document.getElementById('details-tags');
+    tagsContainer.innerHTML = extension.tags.map(tag => `<span class="details-tag">${tag}</span>`).join('');
   }
 }
 
@@ -660,8 +737,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add smooth scrolling
   addSmoothScrolling();
   
-  // Initialize video modal event listeners
+  // Initialize modal event listeners
   initializeVideoModal();
+  initializeDetailsPanel();
   
   // Add loading animation
   document.body.classList.add('loaded');
@@ -690,6 +768,45 @@ function initializeVideoModal() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.style.display === 'block') {
       window.extensionManager.closeVideoModal();
+    }
+  });
+}
+
+// ===== DETAILS PANEL INITIALIZATION =====
+function initializeDetailsPanel() {
+  const panel = document.getElementById('details-panel');
+  const closeDesktop = document.getElementById('details-close-desktop');
+  const closeMobile = document.getElementById('details-close-mobile');
+  const backBtn = document.getElementById('details-back-btn');
+  
+  // Close button clicks
+  closeDesktop.addEventListener('click', () => {
+    window.extensionManager.closeDetailsPanel();
+  });
+  
+  closeMobile.addEventListener('click', () => {
+    window.extensionManager.closeDetailsPanel();
+  });
+  
+  // Back button (mobile)
+  backBtn.addEventListener('click', () => {
+    window.extensionManager.closeDetailsPanel();
+  });
+  
+  // Click outside panel to close (desktop only)
+  document.addEventListener('click', (e) => {
+    if (panel.classList.contains('open') && 
+        !panel.contains(e.target) && 
+        !e.target.closest('.extension-card') &&
+        window.innerWidth > 1024) {
+      window.extensionManager.closeDetailsPanel();
+    }
+  });
+  
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel.classList.contains('open')) {
+      window.extensionManager.closeDetailsPanel();
     }
   });
 }
