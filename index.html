@@ -126,6 +126,101 @@
     </main>
   </div>
 
+  <!-- Extension Details Side Panel -->
+  <div id="details-panel" class="details-panel">
+    <div class="details-panel-content">
+      <!-- Mobile Header -->
+      <div class="details-header mobile-only">
+        <button class="back-btn" id="details-back-btn">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+        <h2 id="details-title-mobile">Extension Details</h2>
+        <button class="details-close" id="details-close-mobile">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Header -->
+      <div class="details-header desktop-only">
+        <h2 id="details-title-desktop">Extension Details</h2>
+        <button class="details-close" id="details-close-desktop">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Panel Content -->
+      <div class="details-content">
+        <!-- Hero Section -->
+        <div class="details-hero">
+          <div class="details-thumbnail-container">
+            <img id="details-thumbnail" src="" alt="Extension thumbnail" class="details-thumbnail">
+          </div>
+          <div class="details-status-badge" id="details-status"></div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="details-actions" id="details-actions">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Description -->
+        <div class="details-section">
+          <h3>Overview</h3>
+          <p id="details-description"></p>
+        </div>
+
+        <!-- Installation Guide -->
+        <div class="details-section">
+          <h3>📋 Installation Instructions</h3>
+          <ol id="details-installation">
+            <li>Click "View in Chrome Store" button above</li>
+            <li>Click "Add to Chrome" on the Chrome Web Store page</li>
+            <li>Click "Add extension" in the confirmation popup</li>
+            <li>The extension will be installed and ready to use</li>
+            <li>Look for the extension icon in your Chrome toolbar</li>
+          </ol>
+        </div>
+
+        <!-- Usage Guide -->
+        <div class="details-section">
+          <h3>🎯 How to Use</h3>
+          <ol id="details-usage">
+            <li>After installation, the extension will integrate with the target Autodesk product</li>
+            <li>Navigate to your workspace</li>
+            <li>Look for new features and interface elements added by the extension</li>
+            <li>Refer to the feature list below for specific capabilities</li>
+            <li>For detailed documentation, visit the source code repository</li>
+          </ol>
+        </div>
+
+        <!-- Features -->
+        <div class="details-section">
+          <h3>✨ Key Features</h3>
+          <ul id="details-features">
+            <!-- Populated by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="details-section">
+          <h3>🛠️ Technical Information</h3>
+          <div class="details-meta" id="details-meta">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="details-section">
+          <h3>🏷️ Tags</h3>
+          <div class="details-tags" id="details-tags">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Video Modal -->
   <div id="video-modal" class="video-modal">
     <div class="video-modal-content">
