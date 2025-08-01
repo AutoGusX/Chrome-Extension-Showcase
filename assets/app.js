@@ -127,7 +127,7 @@ const extensionsData = [
     lastUpdated: '2024-12-19',
     author: 'Gus Quade',
     thumbnailUrl: null,
-    videoUrl: '89eN7T9zkRE',
+    videoUrl: null,
     tags: ['upchain', 'fusion-manage', 'bom', 'integration'],
     features: [
       'Automated BOM synchronization',
@@ -820,4 +820,5 @@ function initializeDetailsPanel() {
 // Make extensionManager available globally for onclick handlers
 
 window.extensionManager = null; 
+
 
