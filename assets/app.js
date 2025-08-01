@@ -148,7 +148,7 @@ const extensionsData = [
     author: 'Gus Quade',
     githubUrl: '#',
     thumbnailUrl: 'assets/TandemOps.png',
-    videoUrl: null,
+    videoUrl: 'HAXRcqKMQiU',
     tags: ['tandem','fusion-manage'],
     features: [
       'Real-time facility monitoring',
@@ -270,6 +270,11 @@ const extensionsData = [
 
 // ===== RECENT UPDATES DATA =====
 const updatesData = [
+  {
+    date: 'August 1, 2025',
+    extension: 'ALL Extensions',
+    description: 'Add casual demo videos for each extension'
+  },
   {
     date: 'July 28, 2025',
     extension: 'ALL Extensions',
@@ -813,4 +818,5 @@ function initializeDetailsPanel() {
 
 // ===== GLOBAL FUNCTIONS =====
 // Make extensionManager available globally for onclick handlers
+
 window.extensionManager = null; 
