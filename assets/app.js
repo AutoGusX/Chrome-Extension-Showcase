@@ -17,7 +17,7 @@ const extensionsData = [
     installUrl: 'https://chromewebstore.google.com/detail/acc-navigator/iajpnhmfnkmmemcmcnnccanbhicccabm',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/ACC%20Nav%207-9-25.zip',
     thumbnailUrl: 'assets/ACC Navigator Thumbnail.png',
-    videoUrl: '89eN7T9zkRE',
+    videoUrl: '2pdYhG286Sc',
     tags: ['acc'],
     features: [
       'Integrated sidebar navigation for all ACC modules',
@@ -42,7 +42,7 @@ const extensionsData = [
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-ad/nhgbolfnmkimbifadlailgjlcciodkfh',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Admin%20Utilities%207-24-25.zip',
     thumbnailUrl: 'assets/AdminUtilities.png',
-    videoUrl: '89eN7T9zkRE',
+    videoUrl: 'pHh_jQ0DCB8',
     tags: ['fusion-manage'],
     features: [
       'Global Variable Manager with view, modify, and create capabilities',
@@ -64,7 +64,7 @@ const extensionsData = [
     installUrl: 'https://chromewebstore.google.com/detail/fishbone-diagram-for-plm/kpmokllfhkmengcejeegnhgekeebabga',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Fishbone%20Daigram%207-22-25%20final.zip',
     thumbnailUrl: 'assets/Fishbone-Diagram-Thumbnail.png',
-    videoUrl: '89eN7T9zkRE',
+    videoUrl: 'fpy6mSLkmPQ',
     tags: ['fusion-manage'],
     features: [
       'Interactive diagram creation',
@@ -86,7 +86,7 @@ const extensionsData = [
     installUrl: 'https://chromewebstore.google.com/detail/fusion-manage-advanced-cl/miicacedigmcjikfaiimmogicaedocmj',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Manage%20Clipboard%206-12-25.zip',
     thumbnailUrl: 'assets/clipboard.png',
-    videoUrl: null,
+    videoUrl: 'aJsPUUEu-dE',
     tags: ['fusion-manage'],
     features: [
       'Multi-format data copying',
@@ -107,7 +107,7 @@ const extensionsData = [
     author: 'Gus Quade',
     githubUrl: '#',
     thumbnailUrl: 'assets/kanban.png',
-    videoUrl: null,
+    videoUrl: 'eI9s_APKrUs',
     tags: ['fusion-manage'],
     features: [
       'Drag-and-drop task management',
@@ -127,7 +127,7 @@ const extensionsData = [
     lastUpdated: '2024-12-19',
     author: 'Gus Quade',
     thumbnailUrl: null,
-    videoUrl: null,
+    videoUrl: '89eN7T9zkRE',
     tags: ['upchain', 'fusion-manage', 'bom', 'integration'],
     features: [
       'Automated BOM synchronization',
@@ -169,7 +169,7 @@ const extensionsData = [
     author: 'Gus Quade',
     githubUrl: '#',
     thumbnailUrl: 'assets/digital-thread.png',
-    videoUrl: null,
+    videoUrl: 'YdCeoMc4g58',
     tags: ['fusion-manage'],
     features: [
       'Complete lifecycle visualization',
@@ -191,7 +191,7 @@ const extensionsData = [
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-link-op/glgjlippogdaimfdlcbccnjkhfknidfl',
     githubUrl: '#',
     thumbnailUrl: 'assets/FOPS-link-opener.png',
-    videoUrl: null,
+    videoUrl: 'ynG4bcGH7QA',
     tags: ['fusion-operations'],
     features: [
       'Smart URL recognition',
@@ -215,7 +215,7 @@ const extensionsData = [
     installUrl: 'https://chromewebstore.google.com/detail/fusion-operations-favorit/jbglnonjmffhfmmcoibmanbhdgapahbh',
     githubUrl: 'https://github.com/AutoGusX/Zipped-Extensions/blob/main/Fusion%20Operations%20zfavorites%207-26-25.zip',
     thumbnailUrl: 'assets/FOPS-Favorite.png',
-    videoUrl: null,
+    videoUrl: 'er4Mnd_OZuA',
     tags: ['fusion-operations'],
     features: [
       'Simple star-based favoriting system',
@@ -257,7 +257,7 @@ const extensionsData = [
     author: 'Gus Quade',
     githubUrl: '#',
     thumbnailUrl: 'assets/scirpting-helper.png',
-    videoUrl: null,
+    videoUrl: 'apPjI01_Pw8',
     tags: ['fusion-manage', 'scripting', 'automation', 'workflows'],
     features: [
       'Embedded scripting reference',
@@ -820,3 +820,4 @@ function initializeDetailsPanel() {
 // Make extensionManager available globally for onclick handlers
 
 window.extensionManager = null; 
+
