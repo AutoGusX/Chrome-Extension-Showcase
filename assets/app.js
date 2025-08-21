@@ -74,6 +74,28 @@ const extensionsData = [
     ]
   },
   {
+    id: 'fusion-manage-task-manager',
+    title: 'Fusion Manage Task Manager',
+    description: 'Adds a side panel to your browser so you can access, open, and act on all your outstanding work in Fusion Manage, from any page.',
+    status: 'in-development',
+    products: ['fusion-manage'],
+    icon: 'fas fa-list-check',
+    version: '0.8.1',
+    lastUpdated: '2025-08-20',
+    author: 'AutoGus',
+    installUrl: null,
+    githubUrl: null,
+    thumbnailUrl: 'assets/taskmanager.png',
+    videoUrl: '3XVuhz8u0BY',
+    tags: ['fusion-manage'],
+    features: [
+      'Fusion Manage Task Management from every website',
+      'Approve, Review, and Complete Tasks',
+      'Quick filtering and sorting',
+      'Easy task creation'
+    ]
+  },
+  {
     id: 'fusion-manage-advanced-clipboard',
     title: 'Fusion Manage Advanced Clipboard',
     description: 'Enhanced clipboard functionality for Fusion Manage with advanced copy/paste operations and data transformation capabilities.',
@@ -820,5 +842,6 @@ function initializeDetailsPanel() {
 // Make extensionManager available globally for onclick handlers
 
 window.extensionManager = null; 
+
 
 
